@@ -15,4 +15,6 @@ public interface IServiceCliente {
     public void delete(Integer id);
 
     List<Cliente> findByNombre(String nombre);
+
+    List<Cliente> getAllPagination(Integer pageNo, Integer pageSize, String sortBy);
 }

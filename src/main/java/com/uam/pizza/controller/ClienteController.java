@@ -26,6 +26,13 @@ public class ClienteController {
         return serviceCliente.findByNombre(nombre);
     }
 
+    @GetMapping("/allPagination")
+    public List<Cliente> getAllPagination(@RequestParam(defaultValue = "0") Integer pageNo,
+                                          @RequestParam(defaultValue = "10") Integer pageSize,
+                                          @RequestParam(defaultValue = "id") String sortBy) {
+        return serviceCliente.getAllPagination(pageNo,pageSize,sortBy);
+    }
+
     @PostMapping("/save")
     public Cliente insert(@RequestBody Cliente cliente) {
         return serviceCliente.save(cliente);
