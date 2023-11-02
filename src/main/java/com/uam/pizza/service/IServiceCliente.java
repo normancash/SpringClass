@@ -13,4 +13,6 @@ public interface IServiceCliente {
     public Cliente save(Cliente cliente);
 
     public void delete(Integer id);
+
+    List<Cliente> findByNombre(String nombre);
 }

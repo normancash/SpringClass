@@ -28,4 +28,9 @@ public class ServiceCliente implements IServiceCliente{
     public void delete(Integer id) {
         repo.deleteById(id);
     }
+
+    @Override
+    public List<Cliente> findByNombre(String nombre) {
+        return repo.findClienteByPrimerNombre(nombre);
+    }
 }

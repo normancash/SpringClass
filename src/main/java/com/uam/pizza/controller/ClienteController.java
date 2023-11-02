@@ -21,6 +21,11 @@ public class ClienteController {
         return serviceCliente.getAll();
     }
 
+    @GetMapping("/findByNombre")
+    public List<Cliente> findByNombre(@RequestParam(name="nombre") String nombre) {
+        return serviceCliente.findByNombre(nombre);
+    }
+
     @PostMapping("/save")
     public Cliente insert(@RequestBody Cliente cliente) {
         return serviceCliente.save(cliente);
@@ -35,5 +40,7 @@ public class ClienteController {
     public void delete(@PathVariable(name="id") Integer id) {
         serviceCliente.delete(id);
     }
+
+
 
 }
